@@ -1,3 +1,8 @@
+"""
+BY: Edson Pimenta
+PROJECT MADE WITH: Python, Qt, PyQT6
+V: 0.1.0
+"""
 import os
 import sys
 
@@ -11,6 +16,9 @@ from qt_core import *
 class MainWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
+
+        # Title
+        self.setWindowTitle('Qt Calculator')
 
         # Main Window setup (ui_main_window)
         self.ui = UiMainWindow()
