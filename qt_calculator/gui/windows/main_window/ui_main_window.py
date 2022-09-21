@@ -5,6 +5,9 @@ V: 0.1.0
 """
 from qt_calculator.qt_core import *
 
+# Import pages
+from qt_calculator.gui.pages.ui_pages import Ui_StackedWidget
+
 
 class UiMainWindow(object):
     def setup_ui(self, parent):
@@ -14,9 +17,9 @@ class UiMainWindow(object):
         # Initial Parameters
         # sets Main Window in main.py as 1200x720 when initialize
         parent.resize(
-            750, 860
+            386, 614
         )
-        parent.setMinimumSize(750, 850)  # sets Main Window minimum size
+        parent.setMinimumSize(386, 614)  # sets Main Window minimum size
 
         # Create Central Widget
         self.central_frame = (
@@ -74,6 +77,9 @@ class UiMainWindow(object):
         # Application pages
         self.pages = QStackedWidget()
         self.pages.setStyleSheet('font-size: 12pt; color: #f8f8f2')
+        self.ui_pages = Ui_StackedWidget()
+        self.ui_pages.setupUi(self.pages)
+        self.pages.setCurrentWidget(self.ui_pages.standard_calc)
 
         # Content Layout
         self.content_layout = QVBoxLayout(self.content)

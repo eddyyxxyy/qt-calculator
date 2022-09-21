@@ -17,8 +17,9 @@ class MainWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
 
-        # Title
+        # Title and Icon
         self.setWindowTitle('Qt Calculator')
+        self.setWindowIcon(QIcon('icons/calculator.png'))
 
         # Main Window setup (ui_main_window)
         self.ui = UiMainWindow()
