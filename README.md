@@ -8,14 +8,20 @@
 > Calculadora simples, grátis e com interface limpa.
 
 Para realização de operações simples de matemática.
-Este projeto é para estudo e prática de Python e a biblioteca PyQT6.
+Este projeto é para estudo e prática de Python e a biblioteca PySide6.
+
+![estado_atual](docs/img/v0.1.1.jpg)
 
 ## Ambiente de Desenvolvimento
 
-Esta aplicação está sendo desenvolvida com Python 3.10.7 e PyQT6 6.3.1 e são, até o presente momento, as únicas
+> Anteriormente o código estava sendo implementado com PyQT6, porém preferi prosseguir com PySide6. Essa escolha
+> se deve à facilidade de utilizar a ferramenta Designer que já vem junto com a biblioteca PySide6 e também pela
+> sua licença de uso.
+
+Esta aplicação está sendo desenvolvida com Python 3.10.7 e PySide6 6.3.2 e são, até o presente momento, as únicas
 dependências que implicam no real funcionamento da calculadora.
 Todas as especificações do projeto se encontram no arquivo pyproject.toml, este projeto está sendo gerenciado com
-Poetry.
+Poetry e para documentação estou utilizando mkdocs.
 
 Os ícones utilizados: ["Fugue Icons 3.5.6"](https://p.yusukekamiyamane.com/) por
 [Yusuke Kamiyamane](https://twitter.com/ykamiyamane) pela licença
@@ -25,7 +31,7 @@ Os ícones utilizados: ["Fugue Icons 3.5.6"](https://p.yusukekamiyamane.com/) po
 ## Tecnologias
 
 1. [Python 3.10.7](https://www.python.org/downloads/release/python-3107/)
-2. [PyQt 6.3.1](https://pypi.org/project/PyQt6/6.3.1/)
+2. [PySide 6.3.2](https://pypi.org/project/PySide6/)
 
 
 ## Features
@@ -37,13 +43,27 @@ Os ícones utilizados: ["Fugue Icons 3.5.6"](https://p.yusukekamiyamane.com/) po
 
 ## Métodos de Utilização
 
-Quando estiver funcional de alguma forma, estarão aqui as informações.
+No momento em que se encontra essa aplicação, só temos a parte gráfica.
+
+De toda forma, para testar a implementação
+é necessário estar no diretório qt_calculator e executar o seguite comando:
+
+```
+python main.py
+```
 
 
 ## Histórico de Atualizações
 
+* 0.1.1
+  * Criadas as top e bottom bar, além do content que fica entre elas;
+  * Parte gráfica da calculadora padrão implementada na 
+    primeira página do aplicativo (em content);
+  * Outras páginas serão implementadas no futuro, após real
+    implementação dos códigos de cálculos da calculadora padrão,
+    entretando, já estão prontas para receber conteúdo gráfico.
 * 0.1.0
-    * Janela Principal criada com menu lateral
+  * Janela Principal criada com menu lateral.
 
 
 ## Futuro da aplicação

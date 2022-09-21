@@ -7,9 +7,8 @@ import os
 import sys
 
 # Import Main Window
-from gui.windows.main_window.ui_main_window import *
-
-from qt_core import *
+from qt_calculator.gui.windows.main_window.ui_main_window import *
+from qt_calculator.qt_core import *
 
 
 # Main Window
@@ -17,8 +16,9 @@ class MainWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
 
-        # Title
+        # Title and Icon
         self.setWindowTitle('Qt Calculator')
+        self.setWindowIcon(QIcon('icons/calculator.png'))
 
         # Main Window setup (ui_main_window)
         self.ui = UiMainWindow()
