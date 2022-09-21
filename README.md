@@ -42,7 +42,7 @@ Quando estiver funcional de alguma forma, estarão aqui as informações.
 ## Histórico de Atualizações
 
 * 0.1.0
-    * Projeto inicial
+    * Janela Principal criada com menu lateral
 
 
 ## Futuro da aplicação

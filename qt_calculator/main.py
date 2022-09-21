@@ -1,25 +1,28 @@
+import os
 import sys
 
-from PyQt6 import QtGui
-from PyQt6.QtWidgets import QApplication, QWidget
+# Import Main Window
+from gui.windows.main_window.ui_main_window import *
+
+from qt_core import *
 
 
-class MainWindow(QWidget):
+# Main Window
+class MainWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
 
-        self._window_settings()
+        # Main Window setup (ui_main_window)
+        self.ui = UiMainWindow()
+        self.ui.setup_ui(self)
 
-    def _window_settings(self) -> None:
-        self.setWindowTitle('Qt Calculator')
-        self.setWindowIcon(QtGui.QIcon('icons/calculator.png'))
-        self.setMinimumSize(310, 340)
+        # Show Aplication
+        self.show()
 
 
 def main() -> None:
     app = QApplication(sys.argv)
-    main_window = MainWindow()
-    main_window.show()
+    window = MainWindow()
     sys.exit(app.exec())
 
 
