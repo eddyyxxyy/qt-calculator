@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from qt_calculator.qt_core import *
+from qt_core import *
 
 
 class Ui_StackedWidget(object):
@@ -301,6 +301,7 @@ class Ui_StackedWidget(object):
         self.gridLayout.addWidget(self.std_calc_output, 1, 0, 1, 4)
 
         StackedWidget.addWidget(self.standard_calc)
+
         self.scientific_calc = QWidget()
         self.scientific_calc.setObjectName('scientific_calc')
         self.verticalLayout = QVBoxLayout(self.scientific_calc)
@@ -312,17 +313,17 @@ class Ui_StackedWidget(object):
         self.verticalLayout.addWidget(self.label_2)
 
         StackedWidget.addWidget(self.scientific_calc)
-        self.financial_calc = QWidget()
-        self.financial_calc.setObjectName('financial_calc')
-        self.verticalLayout_2 = QVBoxLayout(self.financial_calc)
+        self.config = QWidget()
+        self.config.setObjectName('config')
+        self.verticalLayout_2 = QVBoxLayout(self.config)
         self.verticalLayout_2.setObjectName('verticalLayout_2')
-        self.label = QLabel(self.financial_calc)
+        self.label = QLabel(self.config)
         self.label.setObjectName('label')
         self.label.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_2.addWidget(self.label)
 
-        StackedWidget.addWidget(self.financial_calc)
+        StackedWidget.addWidget(self.config)
 
         self.retranslateUi(StackedWidget)
 
@@ -337,7 +338,7 @@ class Ui_StackedWidget(object):
             QCoreApplication.translate('StackedWidget', 'StackedWidget', None)
         )
         self.sqrt_button.setText(
-            QCoreApplication.translate('StackedWidget', 'sqrt', None)
+            QCoreApplication.translate('StackedWidget', '²√x', None)
         )
         self.seven_button.setText(
             QCoreApplication.translate('StackedWidget', '7', None)
@@ -417,7 +418,7 @@ class Ui_StackedWidget(object):
             )
         )
         self.label.setText(
-            QCoreApplication.translate('StackedWidget', 'financial_calc', None)
+            QCoreApplication.translate('StackedWidget', 'config', None)
         )
 
     # retranslateUi

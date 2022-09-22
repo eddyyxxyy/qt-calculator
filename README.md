@@ -10,7 +10,7 @@
 Para realização de operações simples de matemática.
 Este projeto é para estudo e prática de Python e a biblioteca PySide6.
 
-![estado_atual](docs/img/v0.1.1.jpg)
+![estado_atual](docs/img/v0.1.2.gif)
 
 ## Ambiente de Desenvolvimento
 
@@ -55,6 +55,12 @@ python main.py
 
 ## Histórico de Atualizações
 
+* 0.2.0
+  * Criadas as funcionalidades e animação do menu lateral para navegar
+  entre as páginas do app.
+  * Algumas alterações foram feitas na estrutura do projeto para
+  corrigir os erros de run por linha de comando.
+  * Foram adicionados icones para os botões do menu lateral.
 * 0.1.1
   * Criadas as top e bottom bar, além do content que fica entre elas;
   * Parte gráfica da calculadora padrão implementada na 
