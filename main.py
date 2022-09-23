@@ -35,8 +35,6 @@ class MainWindow(QMainWindow):
         # Btn config
         self.ui.settings_btn.clicked.connect(self.show_page_3)
 
-        # Show Aplication
-        self.show()
 
     def reset_selection(self):
         for btn in self.ui.left_menu.findChildren(QPushButton):
@@ -81,6 +79,7 @@ class MainWindow(QMainWindow):
 def main() -> None:
     app = QApplication(sys.argv)
     window = MainWindow()
+    window.show()
     sys.exit(app.exec())
 
 

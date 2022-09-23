@@ -99,7 +99,7 @@ class UiMainWindow(object):
         self.left_menu_botton_layout.addWidget(self.settings_btn)
 
         # Botton label Left Menu
-        self.left_menu_label_version = QLabel('v0.1.2')
+        self.left_menu_label_version = QLabel('v1.0.0')
         self.left_menu_label_version.setAlignment(Qt.AlignCenter)
         self.left_menu_label_version.setMinimumHeight(30)
         self.left_menu_label_version.setMaximumHeight(30)

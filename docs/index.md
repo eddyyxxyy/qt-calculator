@@ -10,7 +10,7 @@
 Para realização de operações simples de matemática.
 Este projeto é para estudo e prática de Python e a biblioteca PySide6.
 
-![estado_atual](docs/img/v0.1.2.gif)
+![estado_atual](versions/v1.0.0.gif)
 
 ## Ambiente de Desenvolvimento
 
@@ -45,8 +45,8 @@ Os ícones utilizados: ["Fugue Icons 3.5.6"](https://p.yusukekamiyamane.com/) po
 
 No momento em que se encontra essa aplicação, só temos a parte gráfica.
 
-De toda forma, para testar a implementação
-é necessário estar no diretório qt_calculator e executar o seguite comando:
+De toda forma, para testar a implementação é necessário estar no diretório
+do projeto e executar o seguite comando no cmd/shell:
 
 ```
 python main.py
@@ -55,6 +55,12 @@ python main.py
 
 ## Histórico de Atualizações
 
+* 1.0.0
+  * Calculadora padrão funcional, como o foco é ter uma interface
+  responsiva e bonita, a questão de lidar com os números e outputs
+  estão bem simples.
+  * Futuramente, posso implementar as outras funções do app, mas o
+  que me propus a estudar aqui já foi concluído.
 * 0.2.0
   * Criadas as funcionalidades e animação do menu lateral para navegar
   entre as páginas do app.
@@ -74,8 +80,10 @@ python main.py
 
 ## Futuro da aplicação
 
-Futuramente irei implementar uma calculadora ciêntifica. Vou tentar já me preparar para manter a estrutura do projeto
-como algo preparado para receber essa atualização.
+Futuramente, se meus outros projetos não tomarem demais de meu tempo,
+irei implementar a calculadora ciêntifica e config. Vou tentar já me
+preparar para manter a estrutura do projeto como algo preparado para
+receber essa atualização, vinda de mim ou de algum colaborador!
 
 
 ## Meta

@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from math import sqrt
+
 from qt_core import *
 
 
@@ -20,7 +22,8 @@ class Ui_StackedWidget(object):
         self.standard_calc.setObjectName('standard_calc')
         self.gridLayout = QGridLayout(self.standard_calc)
         self.gridLayout.setObjectName('gridLayout')
-        self.sqrt_button = QPushButton(self.standard_calc)
+
+        self.sqrt_button = QPushButton(self.standard_calc, clicked=lambda: self.sqrt_it())
         self.sqrt_button.setObjectName('sqrt_button')
         sizePolicy1 = QSizePolicy(
             QSizePolicy.MinimumExpanding, QSizePolicy.MinimumExpanding
@@ -37,7 +40,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.sqrt_button, 3, 2, 1, 1)
 
-        self.seven_button = QPushButton(self.standard_calc)
+        self.seven_button = QPushButton(self.standard_calc, clicked=lambda: self.press_it("7"))
         self.seven_button.setObjectName('seven_button')
         sizePolicy1.setHeightForWidth(
             self.seven_button.sizePolicy().hasHeightForWidth()
@@ -50,7 +53,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.seven_button, 4, 0, 1, 1)
 
-        self.divided_by_x_button = QPushButton(self.standard_calc)
+        self.divided_by_x_button = QPushButton(self.standard_calc, clicked=lambda: self.one_divided_by_x_it())
         self.divided_by_x_button.setObjectName('divided_by_x_button')
         sizePolicy1.setHeightForWidth(
             self.divided_by_x_button.sizePolicy().hasHeightForWidth()
@@ -62,7 +65,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.divided_by_x_button, 3, 0, 1, 1)
 
-        self.four_button = QPushButton(self.standard_calc)
+        self.four_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("4"))
         self.four_button.setObjectName('four_button')
         sizePolicy1.setHeightForWidth(
             self.four_button.sizePolicy().hasHeightForWidth()
@@ -72,7 +75,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.four_button, 5, 0, 1, 1)
 
-        self.backspace_button = QPushButton(self.standard_calc)
+        self.backspace_button = QPushButton(self.standard_calc, clicked= lambda: self.backspace_it())
         self.backspace_button.setObjectName('backspace_button')
         sizePolicy1.setHeightForWidth(
             self.backspace_button.sizePolicy().hasHeightForWidth()
@@ -82,7 +85,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.backspace_button, 2, 3, 1, 1)
 
-        self.division_button = QPushButton(self.standard_calc)
+        self.division_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("/"))
         self.division_button.setObjectName('division_button')
         sizePolicy1.setHeightForWidth(
             self.division_button.sizePolicy().hasHeightForWidth()
@@ -92,7 +95,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.division_button, 3, 3, 1, 1)
 
-        self.percent_button = QPushButton(self.standard_calc)
+        self.percent_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("%"))
         self.percent_button.setObjectName('percent_button')
         sizePolicy1.setHeightForWidth(
             self.percent_button.sizePolicy().hasHeightForWidth()
@@ -102,7 +105,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.percent_button, 2, 0, 1, 1)
 
-        self.plus_button = QPushButton(self.standard_calc)
+        self.plus_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("+"))
         self.plus_button.setObjectName('plus_button')
         sizePolicy1.setHeightForWidth(
             self.plus_button.sizePolicy().hasHeightForWidth()
@@ -112,7 +115,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.plus_button, 6, 3, 1, 1)
 
-        self.six_button = QPushButton(self.standard_calc)
+        self.six_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("6"))
         self.six_button.setObjectName('six_button')
         sizePolicy1.setHeightForWidth(
             self.six_button.sizePolicy().hasHeightForWidth()
@@ -122,7 +125,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.six_button, 5, 2, 1, 1)
 
-        self.c_button = QPushButton(self.standard_calc)
+        self.c_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("C"))
         self.c_button.setObjectName('c_button')
         sizePolicy1.setHeightForWidth(
             self.c_button.sizePolicy().hasHeightForWidth()
@@ -133,7 +136,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.c_button, 2, 2, 1, 1)
 
-        self.two_button = QPushButton(self.standard_calc)
+        self.two_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("2"))
         self.two_button.setObjectName('two_button')
         sizePolicy1.setHeightForWidth(
             self.two_button.sizePolicy().hasHeightForWidth()
@@ -143,7 +146,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.two_button, 6, 1, 1, 1)
 
-        self.minus_button = QPushButton(self.standard_calc)
+        self.minus_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("-"))
         self.minus_button.setObjectName('minus_button')
         sizePolicy1.setHeightForWidth(
             self.minus_button.sizePolicy().hasHeightForWidth()
@@ -153,7 +156,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.minus_button, 5, 3, 1, 1)
 
-        self.nine_button = QPushButton(self.standard_calc)
+        self.nine_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("9"))
         self.nine_button.setObjectName('nine_button')
         sizePolicy1.setHeightForWidth(
             self.nine_button.sizePolicy().hasHeightForWidth()
@@ -163,7 +166,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.nine_button, 4, 2, 1, 1)
 
-        self.comma_button = QPushButton(self.standard_calc)
+        self.comma_button = QPushButton(self.standard_calc, clicked=lambda: self.comma_it())
         self.comma_button.setObjectName('comma_button')
         sizePolicy1.setHeightForWidth(
             self.comma_button.sizePolicy().hasHeightForWidth()
@@ -173,7 +176,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.comma_button, 7, 2, 1, 1)
 
-        self.plus_minus_button = QPushButton(self.standard_calc)
+        self.plus_minus_button = QPushButton(self.standard_calc, clicked= lambda: self.plus_minus_it())
         self.plus_minus_button.setObjectName('plus_minus_button')
         sizePolicy1.setHeightForWidth(
             self.plus_minus_button.sizePolicy().hasHeightForWidth()
@@ -183,7 +186,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.plus_minus_button, 7, 0, 1, 1)
 
-        self.eight_button = QPushButton(self.standard_calc)
+        self.eight_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("8"))
         self.eight_button.setObjectName('eight_button')
         sizePolicy1.setHeightForWidth(
             self.eight_button.sizePolicy().hasHeightForWidth()
@@ -193,7 +196,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.eight_button, 4, 1, 1, 1)
 
-        self.ce_button = QPushButton(self.standard_calc)
+        self.ce_button = QPushButton(self.standard_calc, clicked= lambda: self.backspace_it())
         self.ce_button.setObjectName('ce_button')
         sizePolicy1.setHeightForWidth(
             self.ce_button.sizePolicy().hasHeightForWidth()
@@ -207,7 +210,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.ce_button, 2, 1, 1, 1)
 
-        self.three_button = QPushButton(self.standard_calc)
+        self.three_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("3"))
         self.three_button.setObjectName('three_button')
         sizePolicy1.setHeightForWidth(
             self.three_button.sizePolicy().hasHeightForWidth()
@@ -217,7 +220,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.three_button, 6, 2, 1, 1)
 
-        self.one_button = QPushButton(self.standard_calc)
+        self.one_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("1"))
         self.one_button.setObjectName('one_button')
         sizePolicy1.setHeightForWidth(
             self.one_button.sizePolicy().hasHeightForWidth()
@@ -227,7 +230,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.one_button, 6, 0, 1, 1)
 
-        self.zero_button = QPushButton(self.standard_calc)
+        self.zero_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("0"))
         self.zero_button.setObjectName('zero_button')
         sizePolicy1.setHeightForWidth(
             self.zero_button.sizePolicy().hasHeightForWidth()
@@ -237,7 +240,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.zero_button, 7, 1, 1, 1)
 
-        self.mul_button = QPushButton(self.standard_calc)
+        self.mul_button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("*"))
         self.mul_button.setObjectName('mul_button')
         sizePolicy1.setHeightForWidth(
             self.mul_button.sizePolicy().hasHeightForWidth()
@@ -247,7 +250,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.mul_button, 4, 3, 1, 1)
 
-        self.equal_button = QPushButton(self.standard_calc)
+        self.equal_button = QPushButton(self.standard_calc, clicked= lambda: self.math_it())
         self.equal_button.setObjectName('equal_button')
         sizePolicy1.setHeightForWidth(
             self.equal_button.sizePolicy().hasHeightForWidth()
@@ -257,7 +260,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.equal_button, 7, 3, 1, 1)
 
-        self.five__button = QPushButton(self.standard_calc)
+        self.five__button = QPushButton(self.standard_calc, clicked= lambda: self.press_it("5"))
         self.five__button.setObjectName('five__button')
         sizePolicy1.setHeightForWidth(
             self.five__button.sizePolicy().hasHeightForWidth()
@@ -267,7 +270,7 @@ class Ui_StackedWidget(object):
 
         self.gridLayout.addWidget(self.five__button, 5, 1, 1, 1)
 
-        self.sqr_button = QPushButton(self.standard_calc)
+        self.sqr_button = QPushButton(self.standard_calc, clicked= lambda: self.sqr_it())
         self.sqr_button.setObjectName('sqr_button')
         sizePolicy1.setHeightForWidth(
             self.sqr_button.sizePolicy().hasHeightForWidth()
@@ -331,8 +334,77 @@ class Ui_StackedWidget(object):
 
         QMetaObject.connectSlotsByName(StackedWidget)
 
-    # setupUi
 
+    def sqr_it(self):
+        screen = self.std_calc_output.text()
+        try:
+            answer = float(screen) ** 2
+            self.std_calc_output.setText(str(answer))
+        except:
+            self.std_calc_output.setText('ERROR')
+
+
+    def sqrt_it(self):
+        screen = self.std_calc_output.text()
+        try:
+            answer = sqrt(float(screen))
+            self.std_calc_output.setText(str(answer))
+        except:
+            self.std_calc_output.setText('ERROR')
+
+
+    def one_divided_by_x_it(self):
+        screen = self.std_calc_output.text()
+        try:
+            answer = 1 / float(screen)
+            self.std_calc_output.setText(str(answer))
+        except:
+            self.std_calc_output.setText('ERROR')
+
+
+    def math_it(self):
+        screen = self.std_calc_output.text()
+        screen.replace(',', '.')
+        try:
+            answer = eval(screen)
+            if '(' in str(answer):
+                raise Exception
+            self.std_calc_output.setText(str(answer))
+        except:
+            self.std_calc_output.setText('ERROR')
+
+
+    def plus_minus_it(self):
+        screen = self.std_calc_output.text()
+        if '-' in screen:
+            self.std_calc_output.setText(screen.replace('-', ''))
+        else:
+            self.std_calc_output.setText(f'-{screen}')
+
+
+    def backspace_it(self):
+        screen = self.std_calc_output.text()
+        screen = screen[:-1]
+        self.std_calc_output.setText(screen)
+
+
+    def comma_it(self):
+        screen = self.std_calc_output.text()
+        if screen[-1] == ',':
+            pass
+        else:
+            self.std_calc_output.setText(f'{screen}.')
+
+
+    def press_it(self, pressed):
+        if pressed == 'C':
+            self.std_calc_output.setText('0')
+        else:
+            if self.std_calc_output.text() == '0':
+                self.std_calc_output.setText('')
+            self.std_calc_output.setText(f'{self.std_calc_output.text()}{pressed}')
+
+    # setupUi
     def retranslateUi(self, StackedWidget):
         StackedWidget.setWindowTitle(
             QCoreApplication.translate('StackedWidget', 'StackedWidget', None)
@@ -398,7 +470,7 @@ class Ui_StackedWidget(object):
             QCoreApplication.translate('StackedWidget', '0', None)
         )
         self.mul_button.setText(
-            QCoreApplication.translate('StackedWidget', 'X', None)
+            QCoreApplication.translate('StackedWidget', '*', None)
         )
         self.equal_button.setText(
             QCoreApplication.translate('StackedWidget', '=', None)
@@ -414,11 +486,11 @@ class Ui_StackedWidget(object):
         )
         self.label_2.setText(
             QCoreApplication.translate(
-                'StackedWidget', 'Scientific Calculator', None
+                'StackedWidget', 'Scientific Calculator\nTo be implemented', None
             )
         )
         self.label.setText(
-            QCoreApplication.translate('StackedWidget', 'config', None)
+            QCoreApplication.translate('StackedWidget', 'Config\nTo be implemented', None)
         )
 
     # retranslateUi
