@@ -88,7 +88,7 @@ receber essa atualização, vinda de mim ou de algum colaborador!
 
 ## Meta
 
-Edson Pimenta - [@eeddyyxxyy](https://www.instagram.com/eeddyyxxyy/) - edson.tibo@gmail.com
+Edson Pimenta - [LinkedIn](https://www.linkedin.com/in/eeddyyxxyy/) - [Gmail](mailto:dev.eddyyxxyy@gmail.com?)
 
 Distribuído sobre a licença GPL v3. Veja `LICENSE` para mais informações.
 
